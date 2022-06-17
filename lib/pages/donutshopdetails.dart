@@ -41,7 +41,7 @@ class _DonutShopDetailsState extends State<DonutShopDetails>
 
   @override
   Widget build(BuildContext context) {
-    DonutService donutService = context.watch<DonutService>();
+    DonutService donutService = context.read<DonutService>();
     //Provider.of<DonutService>(context, listen: false);
     selectedDonut = donutService.getselectedDonut();
     return Scaffold(

@@ -26,16 +26,18 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => DonutShoppingCartService()),
         ChangeNotifierProvider(create: (_) => DonutFavoriteService())
       ],
-      child: MaterialApp(
-        initialRoute: '/',
-        navigatorKey: Utils.mainAppNav,
-        routes: {
-          '/': ((context) => const SplashPage()),
-          '/main': ((context) => const DonutLandingPage()),
-          '/details': ((context) => const DonutShopDetails())
-        },
-        debugShowCheckedModeBanner: false,
-      ),
+      builder: (context, child) {
+        return MaterialApp(
+          initialRoute: '/',
+          navigatorKey: Utils.mainAppNav,
+          routes: {
+            '/': ((context) => const SplashPage()),
+            '/main': ((context) => const DonutLandingPage()),
+            '/details': ((context) => const DonutShopDetails())
+          },
+          debugShowCheckedModeBanner: false,
+        );
+      },
     );
   }
 }
